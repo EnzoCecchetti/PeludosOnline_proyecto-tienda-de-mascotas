@@ -1,25 +1,4 @@
-const tiendaMascotas = [
-    { categoria: "alimentos", nombre: "Regular Fit", mascota: "Gatos", marca: "Royal Canin", precio: 61900, cantidad: "7.5 kg", rutaImagen: "RoyalRegularFit.png" },
-    { categoria: "alimentos", nombre: "Regular Sensible", mascota: "Gatos", marca: "Royal Canin", precio: 22932, cantidad: "1.5 kg", rutaImagen: "RoyalRegularSensible.png" },
-    { categoria: "alimentos", nombre: "Care Urinary", mascota: "Gatos", marca: "Royal Canin", precio: 25390, cantidad: "1.5 kg", rutaImagen: "RoyalCareUrinary.png" },
-    { categoria: "alimentos", nombre: "Mother & Baby Cat", mascota: "Gatos", marca: "Royal Canin", precio: 8790, cantidad: "0.4 kg", rutaImagen: "RoyalMotherAndBabyCat.png" },
-    { categoria: "alimentos", nombre: "Kitten", mascota: "Gatos", marca: "Royal Canin", precio: 55350, cantidad: "7.5 kg", rutaImagen: "RoyalKitten.png" },
-    { categoria: "alimentos", nombre: "Royal Canin Medium Adult", mascota: "Perros", marca: "Royal Canin", precio: 20000, cantidad: "1 kg", rutaImagen: "RoyalMediumAdult.png" },
-    { categoria: "alimentos", nombre: "Royal Canin Mini Junior", mascota: "Perros", marca: "Royal Canin", precio: 25500, cantidad: "1 kg", rutaImagen: "RoyalMiniJunior.png" },
-    { categoria: "alimentos", nombre: "Purina Pro Plan Medium Puppy", mascota: "Perros", marca: "Purina", precio: 52600, cantidad: "5 kg", rutaImagen: "PurinaProPlanMediumPuppy.png" },
-    { categoria: "alimentos", nombre: "Purina Dog Chow Adulto", mascota: "Perros", marca: "Purina", precio: 65300, cantidad: "10 kg", rutaImagen: "PurinaDogChowAdulto.png" },
-    { categoria: "alimentos", nombre: "Royal Canin Maxi Adult", mascota: "Perros", marca: "Royal Canin", precio: 95000, cantidad: "10 kg", rutaImagen: "RoyalCaninMaxiAdult.png" },
-    { categoria: "juguete", nombre: "Pelota de goma", mascota: "Perros", marca: "", precio: 8000, cantidad: "", rutaImagen: "PelotaGomaPerros.png" },
-    { categoria: "juguete", nombre: "Frisbee", mascota: "Perros", marca: "", precio: 12000, cantidad: "", rutaImagen: "FrisbeePerros.png" },
-    { categoria: "juguete", nombre: "Hueso masticable", mascota: "Perros", marca: "", precio: 4500, cantidad: "", rutaImagen: "HuesoMasticable.png" },
-    { categoria: "juguete", nombre: "Dispensador de golosinas", mascota: "Perros", marca: "", precio: 180000, cantidad: "", rutaImagen: "DispensadorAlimento.png" },
-    { categoria: "juguete", nombre: "Cuerda para tirar y morder", mascota: "Perros", marca: "", precio: 8000, cantidad: "", rutaImagen: "CuerdaParaTirar.png" },
-    { categoria: "juguete", nombre: "Caña de pescar con plumas", mascota: "Gatos", marca: "", precio: 8000, cantidad: "", rutaImagen: "CanaDePescarPlumas.png" },
-    { categoria: "juguete", nombre: "Pelota de catnip", mascota: "Gatos", marca: "", precio: 6000, cantidad: "", rutaImagen: "PelotaCatnip.png" },
-    { categoria: "juguete", nombre: "Túnel", mascota: "Gatos", marca: "", precio: 18000, cantidad: "", rutaImagen: "TunelParaGatos.png" },
-    { categoria: "juguete", nombre: "Ratón de peluche", mascota: "Gatos", marca: "", precio: 5000, cantidad: "", rutaImagen: "RatonPeluche.png" },
-    { categoria: "juguete", nombre: "Puntero laser", mascota: "Gatos", marca: "", precio: 10000, cantidad: "", rutaImagen: "PunteroLaser.png" }
-]
+let tiendaMascotas = []
 
 function IniciarTarjetasDeProductos(productos) {
     let contenedorProductos = document.getElementById("catalogo")
@@ -165,6 +144,7 @@ let carrito = []
 
 function agregarAlCarrito(producto, cantidad) {
     const index = carrito.findIndex(item => item.producto.nombre === producto.nombre)
+    avisoProductoAgregado("Producto agregado", "bottom", "right", 1500)
     if (index !== -1) {
         carrito[index].cantidad += cantidad
     } else {
@@ -184,6 +164,11 @@ function vaciarCarrito() {
 }
 
 function comprar() {
+    if (carrito.length === 0) {
+        AlertaCarritoVacio("No posee productos agregados", "", "info", 2500)
+        return 
+    }
+    AlertaCompra("Gracias por su compra", "", "info", 5000)
     vaciarCarrito()
 }
 
@@ -206,6 +191,7 @@ function mostrarCarrito() {
 
             const btnEliminar = document.createElement("button")
             btnEliminar.textContent = "Eliminar"
+            btnEliminar.classList.add("btn-eliminar") 
             btnEliminar.addEventListener("click", () => {
                 eliminarDelCarrito(index)
             })
@@ -219,11 +205,13 @@ function mostrarCarrito() {
 
     const btnVaciar = document.createElement("button")
     btnVaciar.textContent = "VACIAR CARRITO"
+    btnVaciar.classList.add("btn-vaciar")
     btnVaciar.addEventListener("click", vaciarCarrito)
     carritoContenido.appendChild(btnVaciar)
 
     const btnComprar = document.createElement("button")
     btnComprar.textContent = "COMPRAR"
+    btnComprar.classList.add("btn-comprar") 
     btnComprar.addEventListener("click", comprar)
     carritoContenido.appendChild(btnComprar)
 }
@@ -243,7 +231,49 @@ function cargarCarritoDesdeLocalStorage() {
 
 cargarCarritoDesdeLocalStorage()
 
+function avisoProductoAgregado(text, gravity, position, duration) {
+    Toastify({
+        text,
+        gravity,
+        position,
+        duration, 
+        close: true,
+        className: "tostada",
+        backgroundColor: "green",
+        style: {
+            fontSize: "large",
+            background: "white"
+        },
+        }).showToast();
+}
 
+function AlertaCompra(title, text, icon, timer) {
+    Swal.fire({
+        title, 
+        text,
+        icon: "success",
+        showConfirmButton: true,
+        timer: timer
+    })
+}
 
+function AlertaCarritoVacio(title, text, icon, timer) {
+    Swal.fire({
+        title, 
+        text,
+        icon: "error",
+        showConfirmButton: false,
+        timer: timer
+    })
+}
 
+function PedirInfo() {
+    fetch ("./data.json")
+    .then (response => response.json())
+    .then (productos => {
+        tiendaMascotas = productos
+        IniciarTarjetasDeProductos(tiendaMascotas)
+    })
+}
 
+PedirInfo()

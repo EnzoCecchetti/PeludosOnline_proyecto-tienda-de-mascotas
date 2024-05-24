@@ -1,0 +1,182 @@
+[
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Regular Fit",
+        "mascota": "Gatos",
+        "marca": "Royal Canin",
+        "precio": 61900,
+        "cantidad": "7.5 kg",
+        "rutaImagen": "RoyalRegularFit.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Regular Sensible",
+        "mascota": "Gatos",
+        "marca": "Royal Canin",
+        "precio": 22932,
+        "cantidad": "1.5 kg",
+        "rutaImagen": "RoyalRegularSensible.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Care Urinary",
+        "mascota": "Gatos",
+        "marca": "Royal Canin",
+        "precio": 25390,
+        "cantidad": "1.5 kg",
+        "rutaImagen": "RoyalCareUrinary.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Mother & BabyCat",
+        "mascota": "Gatos",
+        "marca": "Royal Canin",
+        "precio": 8790,
+        "cantidad": "0.4 kg",
+        "rutaImagen": "RoyalMotherAndBabyCat.png"
+    },
+    {   
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Kitten",
+        "mascota": "Gatos",
+        "marca": "Royal Canin",
+        "precio": 55350,
+        "cantidad": "7.5 kg",
+        "rutaImagen": "RoyalKitten.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Medium Adult",
+        "mascota": "Perros",
+        "marca": "Royal Canin",
+        "precio": 20000,
+        "cantidad": "1 kg",
+        "rutaImagen": "RoyalMediumAdult.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Mini Junior",
+        "mascota": "Perros",
+        "marca": "Royal Canin",
+        "precio": 25500,
+        "cantidad": "1 kg",
+        "rutaImagen": "RoyalMiniJunior.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Purina Pro Plan Medium Puppy",
+        "mascota": "Perros",
+        "marca": "Purina",
+        "precio": 52600,
+        "cantidad": "5 kg",
+        "rutaImagen": "PurinaProPlanMediumPuppy.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Purina Dog Chow Adulto",
+        "mascota": "Perros",
+        "marca": "Purina",
+        "precio": 65300,
+        "cantidad": "10 kg",
+        "rutaImagen": "PurinaDogChowAdulto.png"
+    },
+    {
+        "categoria": "alimentos",
+        "nombre": "Royal Canin Maxi Adult",
+        "mascota": "Perros",
+        "marca": "Royal Canin",
+        "precio": 95000,
+        "cantidad": "10 kg",
+        "rutaImagen": "RoyalCaninMaxiAdult.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Pelota de goma combinada",
+        "mascota": "Perros",
+        "marca": "",
+        "precio": 8000,
+        "cantidad": "",
+        "rutaImagen": "PelotaGomaPerros.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Frisbee plastico soft estampado",
+        "mascota": "Perros",
+        "marca": "",
+        "precio": 12000,
+        "cantidad": "",
+        "rutaImagen": "FrisbeePerros.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Hueso masticable natural",
+        "mascota": "Perros",
+        "marca": "",
+        "precio": 4500,
+        "cantidad": "",
+        "rutaImagen": "HuesoMasticable.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Dispensador de golosinas",
+        "mascota": "Perros",
+        "marca": "",
+        "precio": 180000,
+        "cantidad": "",
+        "rutaImagen": "DispensadorAlimento.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Cuerda para tirar y morder",
+        "mascota": "Perros",
+        "marca": "",
+        "precio": 8000,
+        "cantidad": "",
+        "rutaImagen": "CuerdaParaTirar.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Caña de pescar plumas",
+        "mascota": "Gatos",
+        "marca": "",
+        "precio": 8000,
+        "cantidad": "",
+        "rutaImagen": "CanaDePescarPlumas.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Pelota de catnip",
+        "mascota": "Gatos",
+        "marca": "",
+        "precio": 6000,
+        "cantidad": "",
+        "rutaImagen": "PelotaCatnip.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Túnel con colgante",
+        "mascota": "Gatos",
+        "marca": "",
+        "precio": 18000,
+        "cantidad": "",
+        "rutaImagen": "TunelParaGatos.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Ratón de peluche",
+        "mascota": "Gatos",
+        "marca": "",
+        "precio": 5000,
+        "cantidad": "",
+        "rutaImagen": "RatonPeluche.png"
+    },
+    {
+        "categoria": "juguete",
+        "nombre": "Puntero laser USB",
+        "mascota": "Gatos",
+        "marca": "",
+        "precio": 10000,
+        "cantidad": "",
+        "rutaImagen": "PunteroLaser.png"
+    }
+]
